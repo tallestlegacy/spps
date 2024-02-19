@@ -41,7 +41,7 @@
 				<Button variant="secondary" class="flex gap-2" on:click={() => handleAuth('github')}>
 					<Github size={16} /> Github
 				</Button>
-				<Button variant="secondary" class="flex gap-2">
+				<Button variant="secondary" class="flex gap-2" on:click={() => handleAuth('google')}>
 					<Mail size={16} /> GMail
 				</Button>
 			</div>
