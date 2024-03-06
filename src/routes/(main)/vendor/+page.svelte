@@ -62,18 +62,25 @@
 							<iconify-icon icon="lucide:package" />
 							{software.package_name}</CardDescription
 						>
-						<CardDescription class="flex items-center gap-2">
-							<iconify-icon icon="lucide:badge-dollar-sign" />
-							{software.price}
-						</CardDescription>
-						<CardDescription class="flex items-center gap-2">
-							<iconify-icon icon="lucide:download" />
-							{software?.spps_receipts?.length ?? 0}
-						</CardDescription>
+						<CardDescription>{software.description}</CardDescription>
 					</CardHeader>
 
 					<CardContent>
-						<CardDescription>{software.description}</CardDescription>
+						<div class="grid grid-cols-2 gap-4">
+							<CardDescription class="flex items-center gap-2">
+								<iconify-icon icon="lucide:badge-dollar-sign" />
+								{software.price} KES
+							</CardDescription>
+							<CardDescription class="flex items-center gap-2">
+								<iconify-icon icon="lucide:download" />
+								{software?.spps_receipts?.length ?? 0}
+							</CardDescription>
+						</div>
+						<CardDescription class="flex items-center gap-2">
+							<iconify-icon icon="lucide:badge-dollar-sign" />
+							{(software.price || 0) * (software?.spps_receipts?.length || 0) * 0.7} KES total revenue
+							earned
+						</CardDescription>
 					</CardContent>
 
 					<CardFooter class="flex items-center justify-between">

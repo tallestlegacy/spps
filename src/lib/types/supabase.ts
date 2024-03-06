@@ -56,7 +56,7 @@ export type Database = {
           price: number | null
           published: boolean
           title: string
-          vendor_id: string
+          vendor_id: string | null
         }
         Insert: {
           background_url?: string | null
@@ -69,7 +69,7 @@ export type Database = {
           price?: number | null
           published?: boolean
           title: string
-          vendor_id?: string
+          vendor_id?: string | null
         }
         Update: {
           background_url?: string | null
@@ -82,7 +82,31 @@ export type Database = {
           price?: number | null
           published?: boolean
           title?: string
-          vendor_id?: string
+          vendor_id?: string | null
+        }
+        Relationships: []
+      }
+      spps_user_profiles: {
+        Row: {
+          created_at: string
+          email: string
+          is_vendor: boolean
+          uid: string
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          is_vendor?: boolean
+          uid?: string
+          username: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          is_vendor?: boolean
+          uid?: string
+          username?: string
         }
         Relationships: []
       }

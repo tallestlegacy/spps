@@ -152,9 +152,13 @@
 									</AlertDialogTrigger>
 									<AlertDialogContent>
 										<AlertDialogHeader>
-											<AlertDialogTitle>Mock Purchase</AlertDialogTitle>
+											<AlertDialogTitle>Purchase {product.price} KES</AlertDialogTitle>
 											<AlertDialogDescription>
-												Are you sure you want to purchase this product?
+												Are you sure you want to purchase
+
+												<b class="font-bold">
+													{product.title}?
+												</b>
 											</AlertDialogDescription>
 										</AlertDialogHeader>
 										<AlertDialogFooter>
@@ -176,4 +180,3 @@
 		{/each}
 	{/if}
 </div>
-

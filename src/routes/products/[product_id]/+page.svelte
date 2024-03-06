@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { PUBLIC_SUPABASE_URL } from '$env/static/public';
 	import { Button } from '@/components/ui/button';
-	import { Card, CardFooter, CardHeader } from '@/components/ui/card';
+	import { Card, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 	import CardContent from '@/components/ui/card/card-content.svelte';
 	import CardDescription from '@/components/ui/card/card-description.svelte';
 	import { Input } from '@/components/ui/input';
@@ -13,6 +13,7 @@
 	import type { Database, Tables } from '@/types/supabase';
 	import { useQuery, useQueryClient } from '@sveltestack/svelte-query';
 	import dayjs from 'dayjs';
+	import { AlertCircle } from 'lucide-svelte';
 	import { toast } from 'svelte-sonner';
 
 	let form: Tables<'spps_software'> = {
@@ -152,6 +153,12 @@
 				<div class="grid gap-2">
 					<Label>Price</Label>
 					<Input bind:value={form.price} type="number" />
+					<Card>
+						<CardDescription class="flex items-center gap-4 px-4 py-2">
+							<AlertCircle />
+							<span> All purchases will be charged 30% commission </span>
+						</CardDescription>
+					</Card>
 				</div>
 				<div class="grid gap-2">
 					<Label>Logo url</Label>
